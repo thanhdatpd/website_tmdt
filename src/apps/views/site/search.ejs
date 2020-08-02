@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("layout/head", {title: "Dat hang thanh cong"}) %>
+  <link rel="stylesheet" href="css/success.css" />
+</head>
+
+<body>
+  <!--	Header	-->
+  <%- include("layout/header") %>
+  <!--	End Header	-->
+
+  <!--	Body	-->
+  <div id="body">
+    <div class="container">
+      <div class="row">
+        <%- include("layout/menu") %>
+      </div>
+      <div class="row">
+        <div id="main" class="col-lg-8 col-md-12 col-sm-12">
+          <!--	Slider	-->
+          <div id="slide" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <%- include("layout/slider") %>
+          </div>
+          <!--	End Slider	-->
+
+
+          <!--	List Product	-->
+          <div class="products">
+            <div id="search-result">Kết quả tìm kiếm với sản phẩm <span><%=q%></span></div>
+            <div class="product-list card-deck">
+              <% for (let product of products) { %>
+                <%- include("components/product-item", {product}) %>
+              <% } %>
+              </div>
+        
+            </div>
+          </div>
+          <!--	End List Product	-->
+  
+          
+          <div id="sidebar" class="col-lg-4 col-md-12 col-sm-12">
+            <%- include("layout/sidebar") %>
+          </div>
+          </div>
+          </div>
+          </div>
+          <!--	End Body	-->
+          
+          <!--	Footer	-->
+          <%- include("layout/footer")%>
+          <!--	End Footer	-->
+          </body>
+          
+          </html>
